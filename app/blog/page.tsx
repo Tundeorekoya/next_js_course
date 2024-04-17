@@ -1,11 +1,11 @@
-import React from 'react'
+import { Metadata } from "next";
 
-const blog = () => {
-  return (
-    <div>
-      blog
-    </div>
-  )
+export const metaData: Metadata = {
+  title: {
+    absolute:"blog"
+  },
+};
+
+export default function page() {
+  return <div>blog</div>;
 }
-
-export default blog

@@ -1,16 +1,22 @@
-import React from 'react'
+import { Metadata } from "next";
 
-const ProductDetails = ({params}:{
-    params:{
-        productId:string
-    }
-}) => {
+type Props = {
+  params: {
+    productId: string;
+  };
+};
+
+export const MetaData = ({ params }: Props): Metadata => {
+  return {
+    title: `product${params.productId}`
+  };
+};
+export default function page({params}:Props) {
   return (
     <div>
-      product details: {params.productId}
+      AMOUNT OF {params.productId}
     </div>
   )
 }
 
-export default ProductDetails
- 
+
