@@ -1,6 +1,8 @@
 "use client";
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import "./style.css"
 
 export const generateMetaData: Metadata = {
   title: "Auth",
@@ -8,7 +10,7 @@ export const generateMetaData: Metadata = {
 const navLinks = [
   { name: "register", href: "/register" },
   { name: "login", href: "/login" },
-  { name: "forget-password", href: "/forget-password" },
+  { name: "forgot", href: "/forgot" },
 ];
 
 export default function ({ children }: { children: React.ReactNode }) {
@@ -19,9 +21,9 @@ export default function ({ children }: { children: React.ReactNode }) {
         const isActive = pathname.startsWith(link.href);
 
         return (
-          <link href={link.href} key={link.name}>
+          <Link href={link.href} key={link.name} className={isActive ? "font-bold mr-4": "text-blue-500 mr-4"}>
             {link.name}
-          </link>
+          </Link>
         );
       })}
       {children}
