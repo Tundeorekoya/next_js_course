@@ -6,6 +6,6 @@ const loading = () => {
       loading.....
     </h1>
   )
-}
+} 
 
 export default loading
